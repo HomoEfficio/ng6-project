@@ -1,3 +1,19 @@
-<p>
-  select works!
-</p>
+<h2>Reactive Forms - select</h2>
+<form [formGroup]="formGroup">
+  <div>
+    <label class="center-block">Select:
+      <select formControlName="select">
+        <option *ngFor="let coinName of coinNames" [value]="coinName">{{coinName}}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label class="center-block">NgSelect:
+      <ng-select formControlName="ngSelect"
+                 [items]="coinModels"
+                 bindLabel="name"
+                 bindValue="id">
+      </ng-select>
+    </label>
+  </div>
+</form>

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SelectComponent } from './select/select.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NgSelectModule } from "@ng-select/ng-select";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,7 @@ import { SelectComponent } from './select/select.component';
     SelectComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule, ReactiveFormsModule, NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

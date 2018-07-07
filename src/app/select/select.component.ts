@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup } from '@angular/forms';
+
+import {coinModels, coinNames} from './data-model';
+
 
 @Component({
   selector: 'app-select',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
-  constructor() { }
+  coinNames = coinNames;
+  coinModels = coinModels;
 
-  ngOnInit() {
+  formGroup: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.setupFormGroup();
   }
 
+  ngOnInit() {
+
+  }
+
+  private setupFormGroup() {
+    this.formGroup = this.fb.group({
+      select: coinNames[2],
+      ngSelect: coinModels[1].id
+    });
+  }
 }
